@@ -6,10 +6,10 @@ import net.thucydides.core.pages.PageObject;
 
 public class CartPage extends PageObject {
 
-@FindBy(partialLinkText = "has been added to your cart.")
+@FindBy(css = ".woocommerce-message")
     private WebElementFacade successfulAddToCart;
 
 public void verifySuccessMessage(String productName){
-    successfulAddToCart.containsElements(productName + "has been added to your cart.");
+    successfulAddToCart.containsText(productName + "has been added to your cart.");
 }
 }
