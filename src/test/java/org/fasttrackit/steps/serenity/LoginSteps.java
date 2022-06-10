@@ -18,24 +18,32 @@ public class LoginSteps extends ScenarioSteps {
     }
 
     @Step
-    public void navigateToLogin(){
+    public void navigateToLogin() {
         homePage.clickAccountLink();
     }
 
     @Step
-    public void setCredentials(String email, String pass){
+    public void setCredentials(String email, String pass) {
         loginPage.setEmailField(email);
         loginPage.setPasswordField(pass);
     }
 
     @Step
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         loginPage.clickLoginButton();
     }
 
     @Step
-    public void verifySuccessfulLoginMessage(String username){
+    public void verifySuccessfulLoginMessage(String username) {
         myAccountPage.verifySuccessfulLoginMessage(username);
+    }
+
+    @Step
+    public void doLogin(String email, String password){
+        navigateToHomePage();
+        navigateToLogin();
+        setCredentials(email, password);
+        clickLoginButton();
     }
 
 }
