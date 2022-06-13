@@ -6,34 +6,30 @@ import org.junit.Test;
 public class LoginTests extends BaseTest {
 
     @Test
-    public void loginWithValidCredentialsTest() {
+    public void loginWithValidCredentials() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.setCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
         loginSteps.clickLoginButton();
         loginSteps.verifySuccessfulLoginMessage("johntravolta");
-
     }
-
     @Test
-    public void loginWithInvalidCredentialsTest() {
+    public void loginWithInvalidCredentials() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.setCredentials("alabala1234@yahoo.com", "pass123");
         loginSteps.clickLoginButton();
         loginSteps.verifyUnsuccessfulLoginMessage("ERROR");
     }
-
     @Test
-    public void loginWithoutCredentialsTest() {
+    public void loginWithoutCredentials() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.clickLoginButton();
         loginSteps.verifyLoginWithoutCredentials("Error: Username is required.");
     }
-
     @Test
-    public void forgotMyPasswordTest() {
+    public void forgotMyPassword() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.clickForgotPassword();
@@ -42,7 +38,6 @@ public class LoginTests extends BaseTest {
         loginSteps.verifySuccessfulPassResetMsg("Password reset email has been sent.");
     }
 
-    @Test
-    public void
+
 
 }

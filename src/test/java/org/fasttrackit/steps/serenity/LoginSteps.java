@@ -16,67 +16,54 @@ public class LoginSteps extends ScenarioSteps {
     public void navigateToHomePage() {
         homePage.open();
     }
-
     @Step
     public void navigateToLogin() {
         homePage.clickAccountLink();
     }
-
     @Step
     public void setCredentials(String email, String pass) {
         loginPage.setEmailField(email);
         loginPage.setPasswordField(pass);
     }
-
     @Step
     public void clickLoginButton() {
         loginPage.clickLoginButton();
     }
-
     @Step
     public void verifySuccessfulLoginMessage(String username) {
         myAccountPage.verifySuccessfulLoginMessage(username);
     }
-
     @Step
-    public void verifyUnsuccessfulLoginMessage(String text){
+    public void verifyUnsuccessfulLoginMessage(String text) {
         myAccountPage.verifyUnsuccessfulLoginMessage(text);
     }
-
     @Step
-    public void verifyLoginWithoutCredentials(String text){
+    public void verifyLoginWithoutCredentials(String text) {
         myAccountPage.verifyLoginWithoutCredentials(text);
     }
-
     @Step
-    public void doLogin(String email, String password){
+    public void doLogin(String email, String password) {
         navigateToHomePage();
         navigateToLogin();
         setCredentials(email, password);
         clickLoginButton();
     }
-
     @Step
-    public void clickForgotPassword(){
+    public void clickForgotPassword() {
         loginPage.clickForgotPassword();
     }
-
     @Step
-    public void setLostEmailField(String email){
+    public void setLostEmailField(String email) {
         loginPage.recoverEmailField(email);
     }
-
     @Step
-    public void clickRecoverPasswordButton(){
+    public void clickRecoverPasswordButton() {
         loginPage.clickRecoverPasswordButton();
     }
-
     @Step
-    public void verifySuccessfulPassResetMsg(String text){
+    public void verifySuccessfulPassResetMsg(String text) {
         myAccountPage.verifySuccessfulPassReset(text);
     }
-
-
 
 
 }
