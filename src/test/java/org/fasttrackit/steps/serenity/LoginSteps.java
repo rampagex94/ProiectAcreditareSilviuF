@@ -13,6 +13,10 @@ public class LoginSteps extends ScenarioSteps {
     private myAccountPage myAccountPage;
 
     @Step
+    public void verifyLoginForm(){
+        loginPage.verifyLoginForm();
+    }
+    @Step
     public void navigateToHomePage() {
         homePage.open();
     }
@@ -64,7 +68,18 @@ public class LoginSteps extends ScenarioSteps {
     public void verifySuccessfulPassResetMsg(String text) {
         myAccountPage.verifySuccessfulPassReset(text);
     }
-
+    @Step
+    public void verifyRequiredFields(){
+        loginPage.verifyRequiredFields();
+    }
+    @Step
+    public void clickOnRememberMe(){
+        loginPage.clickOnRememberMe();
+    }
+    @Step
+    public void verifyRememberMeCheckBox(){
+        loginPage.verifyRememberMeCheckBox();
+    }
 
 }
 

@@ -18,6 +18,12 @@ public class LoginPage extends PageObject {
     private WebElementFacade recoverEmailField;
     @FindBy(css = ".woocommerce-Button")
     private WebElementFacade recoverPasswordButton;
+    @FindBy(css = ".col-1")
+    private WebElementFacade loginForm;
+    @FindBy(css = ".required")
+    private WebElementFacade requiredFields;
+    @FindBy(css = "#rememberme")
+    private WebElementFacade rememberMeCheckBox;
 
     public void setEmailField(String email) {
         typeInto(emailField, email);
@@ -37,7 +43,23 @@ public class LoginPage extends PageObject {
     public void clickRecoverPasswordButton() {
         clickOn(recoverPasswordButton);
     }
-
+    public void verifyLoginForm(){
+        loginForm.shouldBeVisible();
+    }
+    public void verifyRequiredFields(){
+        requiredFields.shouldBeVisible();
+    }
+    public void clickOnRememberMe(){
+        clickOn(rememberMeCheckBox);
+    }
+    public boolean verifyRememberMeCheckBox(){
+         if (loginForm.isDisplayed()) {
+            return false;
+        }
+        else {
+            return true;
+         }
+    }
 
 }
 

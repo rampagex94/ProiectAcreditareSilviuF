@@ -20,16 +20,19 @@ public class HomePage extends PageObject {
     public void clickAccountLink() {
         clickOn(myAccountLink);
     }
-
     public void openSearch() {
         clickOn(searchButton);
     }
-
     public void setSearchField(String keyword) {
         typeInto(searchField, keyword);
     }
-
     public void clickSearchIcon(){
         clickOn(goSearchIcon);
-}
+    }
+
+
+
+
+
+
 }

@@ -15,6 +15,9 @@ public class RegisterPage extends PageObject {
     @FindBy(css = "[name=register]")
     private WebElementFacade registerButton;
 
+    @FindBy(css = ".register")
+    private WebElementFacade registerClass;
+
     public void setUsernameField(String username){
         typeInto(registerEmailField, username);
     }
@@ -24,6 +27,7 @@ public class RegisterPage extends PageObject {
     public void clickRegisterButton(){
         clickOn(registerButton);
     }
+
 
 
 }

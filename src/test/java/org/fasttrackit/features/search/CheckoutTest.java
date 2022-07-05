@@ -12,7 +12,8 @@ public class CheckoutTest extends BaseTest {
         productSteps.selectProductFromList("Beanie");
         cartSteps.clickAddToCart();
         checkoutSteps.clickCheckoutMenuButton();
-        checkoutSteps.fillInCheckoutFields("John","Doe","Java","lala1","Rome","Rome","123456","1234567890","john@yahho.com");
+        checkoutSteps.fillInCheckoutFields();
+        checkoutSteps.orderComments("Please deliver in time");
         checkoutSteps.clickPlaceOrderButton();
         checkoutSteps.successfulOrderMsg();
     }

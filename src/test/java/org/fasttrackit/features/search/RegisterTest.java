@@ -1,5 +1,4 @@
 package org.fasttrackit.features.search;
-
 import org.fasttrackit.utils.Constants;
 import org.junit.Test;
 
@@ -13,7 +12,6 @@ public class RegisterTest extends BaseTest {
         registerSteps.clickRegisterButton();
         loginSteps.verifySuccessfulLoginMessage("alabala");
     }
-
     @Test
     public void registerWithAlreadyUsedCredentials() {
         loginSteps.navigateToHomePage();
@@ -22,7 +20,6 @@ public class RegisterTest extends BaseTest {
         registerSteps.clickRegisterButton();
         registerSteps.accountAlreadyRegisteredMsg();
     }
-
     @Test
     public void registerWithoutCredentials() {
         loginSteps.navigateToHomePage();
@@ -30,14 +27,14 @@ public class RegisterTest extends BaseTest {
         registerSteps.clickRegisterButton();
         registerSteps.verifyNoCredentialsRegistrationError();
     }
-
     @Test
     public void registerWithInvalidCredentials() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         registerSteps.setRegisterCredentials("hello", "HelloWorld123@");
         registerSteps.clickRegisterButton();
-        //how to validate a pop-up
+
+        //how to validate a prompt alert
     }
 
 

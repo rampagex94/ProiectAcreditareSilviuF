@@ -21,21 +21,19 @@ public class RegisterSteps extends ScenarioSteps {
         registerPage.setUsernameField(email);
         registerPage.setPasswordField(pass);
     }
-
     @Step
     public void clickRegisterButton(){
         registerPage.clickRegisterButton();
     }
-
     @Step
     public void accountAlreadyRegisteredMsg(){
         myAccountPage.accountAlreadyRegistered();
     }
-
     @Step
     public void verifyNoCredentialsRegistrationError(){
         myAccountPage.noCredentialsRegisterError();
     }
+
 
 
 

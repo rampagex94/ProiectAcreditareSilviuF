@@ -3,23 +3,24 @@ package org.fasttrackit.steps.serenity;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.fasttrackit.pages.*;
+import org.fasttrackit.utils.CheckoutDetails;
 
 public class CheckoutSteps {
 
     private CheckoutPage checkoutPage;
 
     @Step
-    public void fillInCheckoutFields(String a, String b, String c, String d, String e, String f, String g, String h, String i) {
-        checkoutPage.setBillingFirstNameField(a);
-        checkoutPage.setBillingLastNameField(b);
-        checkoutPage.setBillingCompany(c);
-        checkoutPage.setBillingCountry();
-        checkoutPage.setBillingAddress(d);
-        checkoutPage.setBillingCity(e);
-        checkoutPage.setBillingState(f);
-        checkoutPage.setBillingPostcode(g);
-        checkoutPage.setBillingPhone(h);
-        checkoutPage.setBillingEmail(i);
+    public void fillInCheckoutFields() {
+        checkoutPage.setBillingFirstNameField(CheckoutDetails.FNAME);
+        checkoutPage.setBillingLastNameField(CheckoutDetails.LNAME);
+        checkoutPage.setBillingCompany(CheckoutDetails.COMPANY);
+        //checkoutPage.setBillingCountry();
+        checkoutPage.setBillingAddress(CheckoutDetails.ADDRESS);
+        checkoutPage.setBillingCity(CheckoutDetails.CITY);
+        checkoutPage.setBillingState(CheckoutDetails.STATE);
+        checkoutPage.setBillingPostcode(CheckoutDetails.POSTCODE);
+        checkoutPage.setBillingPhone(CheckoutDetails.PHONE);
+        checkoutPage.setBillingEmail(CheckoutDetails.EMAIL);
     }
 
     @Step
@@ -38,4 +39,5 @@ public class CheckoutSteps {
     public void successfulOrderMsg(){
         checkoutPage.successfulOrderMsg();
     }
+
 }
