@@ -12,4 +12,5 @@ public class CheckoutDetails {
     public static final String EMAIL = "johntravolta@yahoo.com";
 
 
+
 }
