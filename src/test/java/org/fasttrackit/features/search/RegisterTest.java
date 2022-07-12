@@ -31,10 +31,10 @@ public class RegisterTest extends BaseTest {
     public void registerWithInvalidCredentials() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
-        registerSteps.setRegisterCredentials("hello", "HelloWorld123@");
+        registerSteps.setRegisterCredentials("hello", "");
         registerSteps.clickRegisterButton();
+        registerSteps.popUpAlertInvalidRegistrationEmail();
 
-        //how to validate a prompt alert
     }
 
 

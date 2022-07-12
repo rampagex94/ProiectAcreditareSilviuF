@@ -33,7 +33,10 @@ public class RegisterSteps extends ScenarioSteps {
     public void verifyNoCredentialsRegistrationError(){
         myAccountPage.noCredentialsRegisterError();
     }
-
+    @Step
+    public void popUpAlertInvalidRegistrationEmail(){
+        registerPage.invalidEmailPopup();
+    }
 
 
 

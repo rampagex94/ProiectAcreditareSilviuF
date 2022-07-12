@@ -52,14 +52,7 @@ public class LoginPage extends PageObject {
     public void clickOnRememberMe(){
         clickOn(rememberMeCheckBox);
     }
-    public boolean verifyRememberMeCheckBox(){
-         if (loginForm.isDisplayed()) {
-            return false;
-        }
-        else {
-            return true;
-         }
-    }
+
 
 }
 

@@ -8,37 +8,22 @@ import static java.lang.System.exit;
 public class LoginTests extends BaseTest {
 
     @Test
-    public void loginLogoAndFieldsVisible() {
+    public void loginLogoAndLoginFieldsVisible() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.verifyLoginForm();
     }
 
     @Test
-    public void verifyRequiredFields() {
+    public void verifyLoginRequiredFields() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.verifyRequiredFields();
     }
 
     @Test
-    public void verifyRememberMeCheckBox() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLogin();
-        loginSteps.setCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
-        loginSteps.clickOnRememberMe();
-        webDriver.close();
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLogin();
-        loginSteps.verifyRememberMeCheckBox();
-    }
-
-    @Test
     public void loginWithValidCredentials() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLogin();
-        loginSteps.setCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
-        loginSteps.clickLoginButton();
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
         loginSteps.verifySuccessfulLoginMessage("johntravolta");
     }
 

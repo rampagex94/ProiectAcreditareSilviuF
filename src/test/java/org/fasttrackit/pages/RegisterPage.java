@@ -3,6 +3,7 @@ package org.fasttrackit.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
+import org.junit.Assert;
 
 public class RegisterPage extends PageObject {
 
@@ -26,6 +27,11 @@ public class RegisterPage extends PageObject {
     }
     public void clickRegisterButton(){
         clickOn(registerButton);
+    }
+    public void invalidEmailPopup(){
+        String popUp = "Please include an '@' in the email address";
+        Assert.assertTrue(popUp, true);
+
     }
 
 

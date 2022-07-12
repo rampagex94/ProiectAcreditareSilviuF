@@ -76,10 +76,7 @@ public class LoginSteps extends ScenarioSteps {
     public void clickOnRememberMe(){
         loginPage.clickOnRememberMe();
     }
-    @Step
-    public void verifyRememberMeCheckBox(){
-        loginPage.verifyRememberMeCheckBox();
-    }
+
 
 }
 

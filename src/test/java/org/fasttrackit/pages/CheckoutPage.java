@@ -57,8 +57,6 @@ public class CheckoutPage extends PageObject {
     }
 
     public void setBillingCountry() {
-        clickOn(billingCountry);
-        clickOn(country);
     }
 
     public void setBillingAddress(String text) {
@@ -69,8 +67,7 @@ public class CheckoutPage extends PageObject {
         typeInto(billingCity, text);
     }
 
-    public void setBillingState(String text) {
-        typeInto(billingState, text);
+    public void setBillingCounty(String text) {
     }
 
     public void setBillingPostcode(String text) {

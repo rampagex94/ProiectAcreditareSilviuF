@@ -17,7 +17,7 @@ public class CheckoutSteps {
         //checkoutPage.setBillingCountry();
         checkoutPage.setBillingAddress(CheckoutDetails.ADDRESS);
         checkoutPage.setBillingCity(CheckoutDetails.CITY);
-        checkoutPage.setBillingState(CheckoutDetails.STATE);
+        //checkoutPage.setBillingState(CheckoutDetails.COUNTY);
         checkoutPage.setBillingPostcode(CheckoutDetails.POSTCODE);
         checkoutPage.setBillingPhone(CheckoutDetails.PHONE);
         checkoutPage.setBillingEmail(CheckoutDetails.EMAIL);

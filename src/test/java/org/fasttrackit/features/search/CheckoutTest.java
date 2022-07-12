@@ -16,5 +16,6 @@ public class CheckoutTest extends BaseTest {
         checkoutSteps.orderComments("Please deliver in time");
         checkoutSteps.clickPlaceOrderButton();
         checkoutSteps.successfulOrderMsg();
+
     }
 }
