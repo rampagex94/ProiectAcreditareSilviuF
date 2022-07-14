@@ -42,7 +42,7 @@ public class LoginSteps extends ScenarioSteps {
         myAccountPage.verifyUnsuccessfulLoginMessage(text);
     }
     @Step
-    public void verifyLoginWithoutCredentialsText(String text) {
+    public void verifyLogInWithoutCredentialsText(String text) {
         myAccountPage.verifyLoginWithoutCredentialsText(text);
     }
     @Step
@@ -75,6 +75,11 @@ public class LoginSteps extends ScenarioSteps {
     @Step
     public void clickOnRememberMe(){
         loginPage.clickOnRememberMe();
+    }
+    @Step
+    public void goToLoginPage(){
+        navigateToHomePage();
+        navigateToLogin();
     }
 
 

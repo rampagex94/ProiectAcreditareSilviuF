@@ -20,7 +20,7 @@ public class LoginPage extends PageObject {
     private WebElementFacade recoverPasswordButton;
     @FindBy(css = ".col-1")
     private WebElementFacade loginForm;
-    @FindBy(css = ".required")
+    @FindBy(css = ".col-1 .required")
     private WebElementFacade requiredFields;
     @FindBy(css = "#rememberme")
     private WebElementFacade rememberMeCheckBox;
