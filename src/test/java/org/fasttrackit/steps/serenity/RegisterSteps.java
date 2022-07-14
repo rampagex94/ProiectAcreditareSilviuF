@@ -26,12 +26,12 @@ public class RegisterSteps extends ScenarioSteps {
         registerPage.clickRegisterButton();
     }
     @Step
-    public void accountAlreadyRegisteredMsg(){
-        myAccountPage.accountAlreadyRegistered();
+    public void accountAlreadyRegisteredMessage(){
+        myAccountPage.accountAlreadyRegisteredMessage();
     }
     @Step
     public void verifyNoCredentialsRegistrationError(){
-        myAccountPage.noCredentialsRegisterError();
+        myAccountPage.noCredentialsRegistrationError();
     }
     @Step
     public void popUpAlertInvalidRegistrationEmail(){

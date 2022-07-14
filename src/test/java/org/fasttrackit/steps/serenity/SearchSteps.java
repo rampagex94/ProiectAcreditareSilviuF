@@ -21,5 +21,13 @@ public class SearchSteps extends ScenarioSteps {
     public void verifyProductSearchResults(String productName){
         Assert.assertTrue(searchResultsPage.checkListForProduct(productName));
     }
+    @Step
+    public void noProductsFoundFromSearchResult(){
+        searchResultsPage.noProductsFoundFromSearchResult();
+    }
+
+
+
+
 
 }

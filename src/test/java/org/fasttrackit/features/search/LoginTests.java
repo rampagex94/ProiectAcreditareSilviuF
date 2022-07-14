@@ -18,7 +18,7 @@ public class LoginTests extends BaseTest {
     public void verifyLoginRequiredFields() {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
-        loginSteps.verifyRequiredFields();
+        loginSteps.verifyLoginRequiredFields();
     }
 
     @Test
@@ -41,7 +41,7 @@ public class LoginTests extends BaseTest {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.clickLoginButton();
-        loginSteps.verifyLoginWithoutCredentials("Error: Username is required.");
+        loginSteps.verifyLoginWithoutCredentialsText("Error: Username is required.");
     }
 
     @Test
@@ -49,7 +49,7 @@ public class LoginTests extends BaseTest {
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLogin();
         loginSteps.clickForgotPassword();
-        loginSteps.setLostEmailField(Constants.LOST_EMAIL);
+        loginSteps.inputEmailForAccountPasswordReset(Constants.LOST_EMAIL);
         loginSteps.clickRecoverPasswordButton();
         loginSteps.verifySuccessfulPassResetMsg("Password reset email has been sent.");
     }

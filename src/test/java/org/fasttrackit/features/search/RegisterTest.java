@@ -18,7 +18,7 @@ public class RegisterTest extends BaseTest {
         loginSteps.navigateToLogin();
         registerSteps.setRegisterCredentials(Constants.REGISTER_EMAIL, Constants.REGISTER_PASS);
         registerSteps.clickRegisterButton();
-        registerSteps.accountAlreadyRegisteredMsg();
+        registerSteps.accountAlreadyRegisteredMessage();
     }
     @Test
     public void registerWithoutCredentials() {

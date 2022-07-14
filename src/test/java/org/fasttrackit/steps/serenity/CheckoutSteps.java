@@ -14,10 +14,8 @@ public class CheckoutSteps {
         checkoutPage.setBillingFirstNameField(CheckoutDetails.FNAME);
         checkoutPage.setBillingLastNameField(CheckoutDetails.LNAME);
         checkoutPage.setBillingCompany(CheckoutDetails.COMPANY);
-        //checkoutPage.setBillingCountry();
         checkoutPage.setBillingAddress(CheckoutDetails.ADDRESS);
         checkoutPage.setBillingCity(CheckoutDetails.CITY);
-        //checkoutPage.setBillingState(CheckoutDetails.COUNTY);
         checkoutPage.setBillingPostcode(CheckoutDetails.POSTCODE);
         checkoutPage.setBillingPhone(CheckoutDetails.PHONE);
         checkoutPage.setBillingEmail(CheckoutDetails.EMAIL);

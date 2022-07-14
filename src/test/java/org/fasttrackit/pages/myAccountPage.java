@@ -16,7 +16,7 @@ public class myAccountPage extends PageObject {
     private WebElementFacade noCredentialsLoginText;
 
     @FindBy(css = ".woocommerce-message")
-    private WebElementFacade successfullPassReset;
+    private WebElementFacade successfulPassReset;
 
     @FindBy(css = ".woocommerce-error")
     private WebElementFacade accountAlreadyRegistered;
@@ -30,16 +30,16 @@ public class myAccountPage extends PageObject {
     public void verifyUnsuccessfulLoginMessage(String text) {
         unsuccessfulLoginText.shouldBeVisible();
     }
-    public void verifyLoginWithoutCredentials(String text) {
+    public void verifyLoginWithoutCredentialsText(String text) {
         noCredentialsLoginText.shouldContainText(text);
     }
-    public void verifySuccessfulPassReset(String text) {
-        successfullPassReset.shouldContainText(text);
+    public void verifySuccessfulPassResetMessage(String text) {
+        successfulPassReset.shouldContainText(text);
     }
-    public void accountAlreadyRegistered() {
+    public void accountAlreadyRegisteredMessage() {
         accountAlreadyRegistered.shouldBeVisible();
     }
-    public void noCredentialsRegisterError() {
+    public void noCredentialsRegistrationError() {
         noCredentialsRegisterError.shouldBeVisible();
     }
 

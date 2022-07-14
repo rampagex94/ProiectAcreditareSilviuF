@@ -13,6 +13,7 @@ public class BaseTest {
     @Managed(uniqueSession = true)
     public WebDriver webDriver;
 
+    //protected ~ can only be accessed within its own package
     @Steps
     protected LoginSteps loginSteps;
     @Steps

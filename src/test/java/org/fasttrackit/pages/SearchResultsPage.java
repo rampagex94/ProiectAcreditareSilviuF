@@ -12,6 +12,8 @@ public class SearchResultsPage extends PageObject {
 
     @FindBy(css = ".content-area")
     private List<WebElementFacade> productList;
+    @FindBy(css = ".woocommerce-info")
+    private WebElementFacade noProductsFoundMessage;
 
     public boolean checkListForProduct(String productName) {
         for (WebElementFacade element : productList) {
@@ -32,5 +34,15 @@ public class SearchResultsPage extends PageObject {
             }
         }
     }
+
+    public boolean noProductsFoundFromSearchResult() {
+        if (noProductsFoundMessage.isDisplayed()) {
+            Assert.assertTrue(true);
+        }
+         return false;
+        }
+
+
+
 
 }

@@ -34,24 +34,25 @@ public class LoginPage extends PageObject {
     public void clickLoginButton() {
         clickOn(loginButton);
     }
+    public void clickOnRememberMe(){
+        clickOn(rememberMeCheckBox);
+    }
     public void clickForgotPassword() {
         clickOn(forgotPasswordButton);
     }
-    public void recoverEmailField(String email) {
-        typeInto(recoverEmailField, email);
-    }
-    public void clickRecoverPasswordButton() {
+    public void clickResetPasswordForAccountButton() {
         clickOn(recoverPasswordButton);
+    }
+    public void emailFieldForPasswordReset(String email) {
+        typeInto(recoverEmailField, email);
     }
     public void verifyLoginForm(){
         loginForm.shouldBeVisible();
     }
-    public void verifyRequiredFields(){
+    public void verifyLoginRequiredFields(){
         requiredFields.shouldBeVisible();
     }
-    public void clickOnRememberMe(){
-        clickOn(rememberMeCheckBox);
-    }
+
 
 
 }

@@ -42,8 +42,8 @@ public class LoginSteps extends ScenarioSteps {
         myAccountPage.verifyUnsuccessfulLoginMessage(text);
     }
     @Step
-    public void verifyLoginWithoutCredentials(String text) {
-        myAccountPage.verifyLoginWithoutCredentials(text);
+    public void verifyLoginWithoutCredentialsText(String text) {
+        myAccountPage.verifyLoginWithoutCredentialsText(text);
     }
     @Step
     public void doLogin(String email, String password) {
@@ -57,20 +57,20 @@ public class LoginSteps extends ScenarioSteps {
         loginPage.clickForgotPassword();
     }
     @Step
-    public void setLostEmailField(String email) {
-        loginPage.recoverEmailField(email);
+    public void inputEmailForAccountPasswordReset(String email) {
+        loginPage.emailFieldForPasswordReset(email);
     }
     @Step
     public void clickRecoverPasswordButton() {
-        loginPage.clickRecoverPasswordButton();
+        loginPage.clickResetPasswordForAccountButton();
     }
     @Step
     public void verifySuccessfulPassResetMsg(String text) {
-        myAccountPage.verifySuccessfulPassReset(text);
+        myAccountPage.verifySuccessfulPassResetMessage(text);
     }
     @Step
-    public void verifyRequiredFields(){
-        loginPage.verifyRequiredFields();
+    public void verifyLoginRequiredFields(){
+        loginPage.verifyLoginRequiredFields();
     }
     @Step
     public void clickOnRememberMe(){
