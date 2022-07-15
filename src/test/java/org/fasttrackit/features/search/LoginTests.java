@@ -45,7 +45,7 @@ public class LoginTests extends BaseTest {
     public void resetAccountForgottenPassword() {
         loginSteps.goToMyAccount();
         loginSteps.clickForgotPassword();
-        loginSteps.inputEmailForAccountPasswordReset(Constants.LOST_EMAIL);
+        loginSteps.inputEmailForAccountPasswordReset("hola1234@yahoo.com");
         loginSteps.clickRecoverPasswordButton();
         loginSteps.verifySuccessfulPassResetMsg("Password reset email has been sent.");
     }

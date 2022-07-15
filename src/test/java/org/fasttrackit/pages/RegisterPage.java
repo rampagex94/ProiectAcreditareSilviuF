@@ -12,7 +12,7 @@ public class RegisterPage extends PageObject {
     private WebElementFacade registerEmailField;
     @FindBy(css = "#reg_password")
     private WebElementFacade registerPasswordField;
-    @FindBy(css = "[name=\"register\"]")
+    @FindBy(css = ".col-2 .woocommerce-Button")
     private WebElementFacade registerButton;
     @FindBy(css = ".register")
     private WebElementFacade registerClass;
@@ -20,6 +20,8 @@ public class RegisterPage extends PageObject {
     private WebElementFacade registerForm;
     @FindBy(css = ".col-2 .required")
     private WebElementFacade registerRequiredFields;
+    @FindBy(css = ".content-wrap")
+    private WebElementFacade contentWrapClick;
 
     public void setUsernameField(String username){
         typeInto(registerEmailField, username);
@@ -28,8 +30,11 @@ public class RegisterPage extends PageObject {
         typeInto(registerPasswordField, password);
     }
     public void clickRegisterButton(){
+        //Element not enabled bypass!
+        clickOn(contentWrapClick);
         clickOn(registerButton);
     }
+
     public void invalidEmailPopup(){
         String popUp = "Please include an '@' in the email address";
         Assert.assertTrue(popUp, true);
@@ -40,6 +45,8 @@ public class RegisterPage extends PageObject {
     public void verifyRegisterRequiredFieldsAreVisible(){
         registerRequiredFields.shouldBeVisible();
     }
+
+
 
 
 }

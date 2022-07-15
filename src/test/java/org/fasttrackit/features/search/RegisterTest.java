@@ -19,9 +19,9 @@ public class RegisterTest extends BaseTest {
     @Test
     public void registerWithValidCredentials() {
         loginSteps.goToMyAccount();
-        registerSteps.setRegisterCredentials("hola1234@yahoo.com", "12345qwertASDFG@xx34325");
+        registerSteps.setRegisterCredentials("asdsgf@yahoo.com", "12345qwertASDFG@xx34325");
         registerSteps.clickRegisterButton();
-        loginSteps.verifySuccessfulLoginMessage("hola1234");
+        loginSteps.verifySuccessfulLoginMessage("asdsgf");
     }
 
     @Test
