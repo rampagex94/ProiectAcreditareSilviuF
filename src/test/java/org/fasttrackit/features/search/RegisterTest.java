@@ -45,6 +45,7 @@ public class RegisterTest extends BaseTest {
         registerSteps.setRegisterCredentials("hello", "");
         registerSteps.clickRegisterButton();
         registerSteps.popUpAlertInvalidRegistrationEmail();
+
     }
 
 
