@@ -2,6 +2,7 @@ package org.fasttrackit.features.search;
 
 import org.fasttrackit.utils.Constants;
 import org.junit.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static java.lang.System.exit;
 
@@ -9,13 +10,13 @@ public class LoginTests extends BaseTest {
 
     @Test
     public void verifyLogInFieldsAreVisible() {
-        loginSteps.goToLoginPage();
-        loginSteps.verifyLoginForm();
+        loginSteps.goToMyAccount();
+        loginSteps.verifyLoginFormIsVisible();
     }
 
     @Test
     public void verifyLogInRequiredFields() {
-        loginSteps.goToLoginPage();
+        loginSteps.goToMyAccount();
         loginSteps.verifyLoginRequiredFields();
     }
 
@@ -27,7 +28,7 @@ public class LoginTests extends BaseTest {
 
     @Test
     public void logInWithInvalidCredentials() {
-        loginSteps.goToLoginPage();
+        loginSteps.goToMyAccount();
         loginSteps.setCredentials("12345@yahoo.com", "lalala123");
         loginSteps.clickLoginButton();
         loginSteps.verifyUnsuccessfulLoginMessage("ERROR");
@@ -35,14 +36,14 @@ public class LoginTests extends BaseTest {
 
     @Test
     public void logInWithoutCredentials() {
-        loginSteps.goToLoginPage();
+        loginSteps.goToMyAccount();
         loginSteps.clickLoginButton();
         loginSteps.verifyLogInWithoutCredentialsText("Error: Username is required.");
     }
 
     @Test
     public void resetAccountForgottenPassword() {
-        loginSteps.goToLoginPage();
+        loginSteps.goToMyAccount();
         loginSteps.clickForgotPassword();
         loginSteps.inputEmailForAccountPasswordReset(Constants.LOST_EMAIL);
         loginSteps.clickRecoverPasswordButton();
@@ -51,10 +52,11 @@ public class LoginTests extends BaseTest {
 
     @Test
     public void logInAndTickTheRememberMeCheckBox() {
-        loginSteps.goToLoginPage();
+        loginSteps.goToMyAccount();
         loginSteps.setCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
         loginSteps.clickOnRememberMe();
         loginSteps.clickLoginButton();
+        webDriver.close();
 
     }
 }

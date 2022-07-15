@@ -1,5 +1,6 @@
 package org.fasttrackit.pages;
 
+
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
@@ -9,15 +10,16 @@ public class RegisterPage extends PageObject {
 
     @FindBy(css = "#reg_email")
     private WebElementFacade registerEmailField;
-
     @FindBy(css = "#reg_password")
     private WebElementFacade registerPasswordField;
-
-    @FindBy(css = "[name=register]")
+    @FindBy(css = "[name=\"register\"]")
     private WebElementFacade registerButton;
-
     @FindBy(css = ".register")
     private WebElementFacade registerClass;
+    @FindBy(css = ".col-2")
+    private WebElementFacade registerForm;
+    @FindBy(css = ".col-2 .required")
+    private WebElementFacade registerRequiredFields;
 
     public void setUsernameField(String username){
         typeInto(registerEmailField, username);
@@ -31,9 +33,13 @@ public class RegisterPage extends PageObject {
     public void invalidEmailPopup(){
         String popUp = "Please include an '@' in the email address";
         Assert.assertTrue(popUp, true);
-
     }
-
+    public void verifyRegisterFieldsAreVisible(){
+        registerForm.shouldBeVisible();
+    }
+    public void verifyRegisterRequiredFieldsAreVisible(){
+        registerRequiredFields.shouldBeVisible();
+    }
 
 
 }

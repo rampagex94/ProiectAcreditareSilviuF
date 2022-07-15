@@ -4,8 +4,10 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.fasttrackit.steps.serenity.*;
+import org.junit.After;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import java.util.concurrent.TimeUnit;
 
 @RunWith(SerenityRunner.class)
 public class BaseTest {
@@ -28,6 +30,10 @@ public class BaseTest {
     protected CheckoutSteps checkoutSteps;
 
 
+    @After
+    public void closeDriver(){
+        webDriver.close();
+    }
 
 
 }

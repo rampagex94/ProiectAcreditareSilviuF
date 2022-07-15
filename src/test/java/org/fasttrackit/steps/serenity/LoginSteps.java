@@ -13,15 +13,15 @@ public class LoginSteps extends ScenarioSteps {
     private myAccountPage myAccountPage;
 
     @Step
-    public void verifyLoginForm(){
-        loginPage.verifyLoginForm();
+    public void verifyLoginFormIsVisible(){
+        loginPage.verifyLoginFormIsVisible();
     }
     @Step
     public void navigateToHomePage() {
         homePage.open();
     }
     @Step
-    public void navigateToLogin() {
+    public void navigateToMyAccount() {
         homePage.clickAccountLink();
     }
     @Step
@@ -48,7 +48,7 @@ public class LoginSteps extends ScenarioSteps {
     @Step
     public void doLogin(String email, String password) {
         navigateToHomePage();
-        navigateToLogin();
+        navigateToMyAccount();
         setCredentials(email, password);
         clickLoginButton();
     }
@@ -77,9 +77,9 @@ public class LoginSteps extends ScenarioSteps {
         loginPage.clickOnRememberMe();
     }
     @Step
-    public void goToLoginPage(){
+    public void goToMyAccount(){
         navigateToHomePage();
-        navigateToLogin();
+        navigateToMyAccount();
     }
 
 

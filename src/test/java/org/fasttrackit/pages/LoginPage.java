@@ -21,7 +21,7 @@ public class LoginPage extends PageObject {
     @FindBy(css = ".col-1")
     private WebElementFacade loginForm;
     @FindBy(css = ".col-1 .required")
-    private WebElementFacade requiredFields;
+    private WebElementFacade loginRequiredFields;
     @FindBy(css = "#rememberme")
     private WebElementFacade rememberMeCheckBox;
 
@@ -34,7 +34,7 @@ public class LoginPage extends PageObject {
     public void clickLoginButton() {
         clickOn(loginButton);
     }
-    public void clickOnRememberMe(){
+    public void clickOnRememberMe() {
         clickOn(rememberMeCheckBox);
     }
     public void clickForgotPassword() {
@@ -46,13 +46,12 @@ public class LoginPage extends PageObject {
     public void emailFieldForPasswordReset(String email) {
         typeInto(recoverEmailField, email);
     }
-    public void verifyLoginForm(){
+    public void verifyLoginFormIsVisible() {
         loginForm.shouldBeVisible();
     }
-    public void verifyLoginRequiredFields(){
-        requiredFields.shouldBeVisible();
+    public void verifyLoginRequiredFields() {
+        loginRequiredFields.shouldBeVisible();
     }
-
 
 
 }

@@ -5,32 +5,43 @@ import org.junit.Test;
 public class RegisterTest extends BaseTest {
 
     @Test
-    public void registerWithValidCredentials() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLogin();
-        registerSteps.setRegisterCredentials(Constants.REGISTER_EMAIL, Constants.REGISTER_PASS);
-        registerSteps.clickRegisterButton();
-        loginSteps.verifySuccessfulLoginMessage("alabala");
+    public void verifyRegisterFieldsAreVisible(){
+        loginSteps.goToMyAccount();
+        registerSteps.verifyRegisterRequiredFields();
     }
+
+    @Test
+    public void verifyRegisterRequiredFieldsAreVisible(){
+        loginSteps.goToMyAccount();
+        registerSteps.verifyRegisterRequiredFieldsAreVisible();
+    }
+
+    @Test
+    public void registerWithValidCredentials() {
+        loginSteps.goToMyAccount();
+        registerSteps.setRegisterCredentials("hola1234@yahoo.com", "12345qwertASDFG@xx34325");
+        registerSteps.clickRegisterButton();
+        loginSteps.verifySuccessfulLoginMessage("hola1234");
+    }
+
     @Test
     public void registerWithAlreadyUsedCredentials() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLogin();
-        registerSteps.setRegisterCredentials(Constants.REGISTER_EMAIL, Constants.REGISTER_PASS);
+        loginSteps.goToMyAccount();
+        registerSteps.setRegisterCredentials("hola123@yahoo.com", "12345qwertASDFG@xx34325");
         registerSteps.clickRegisterButton();
         registerSteps.accountAlreadyRegisteredMessage();
     }
+
     @Test
     public void registerWithoutCredentials() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLogin();
+        loginSteps.goToMyAccount();
         registerSteps.clickRegisterButton();
         registerSteps.verifyNoCredentialsRegistrationError();
     }
+
     @Test
     public void registerWithInvalidCredentials() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLogin();
+        loginSteps.goToMyAccount();
         registerSteps.setRegisterCredentials("hello", "");
         registerSteps.clickRegisterButton();
         registerSteps.popUpAlertInvalidRegistrationEmail();

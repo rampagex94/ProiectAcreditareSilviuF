@@ -37,7 +37,14 @@ public class RegisterSteps extends ScenarioSteps {
     public void popUpAlertInvalidRegistrationEmail(){
         registerPage.invalidEmailPopup();
     }
-
+    @Step
+    public void verifyRegisterRequiredFields(){
+        registerPage.verifyRegisterFieldsAreVisible();
+    }
+    @Step
+    public void verifyRegisterRequiredFieldsAreVisible(){
+        registerPage.verifyRegisterRequiredFieldsAreVisible();
+    }
 
 
 
