@@ -25,7 +25,14 @@ public class SearchSteps extends ScenarioSteps {
     public void noProductsFoundFromSearchResult(){
         searchResultsPage.noProductsFoundFromSearchResult();
     }
-
+    @Step
+    public void checkListForProduct(String productName) {
+        searchResultsPage.checkListForProduct(productName);
+    }
+    @Step
+    public void selectProductFromList(String product){
+        searchResultsPage.selectProductFromList(product);
+    }
 
 
 

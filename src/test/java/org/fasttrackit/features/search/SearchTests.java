@@ -14,8 +14,28 @@ public class SearchTests extends BaseTest{
     @Test
     public void searchForAnInvalidProduct() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
-        searchSteps.doSearch("Beanie");
+        searchSteps.doSearch("Alien");
         searchSteps.noProductsFoundFromSearchResult();
+    }
+
+    @Test
+    public void checkSearchedItemIsRelevantToProductsList(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.doSearch("T-shirt");
+        searchSteps.checkListForProduct("T-shirt");
+
+    }
+
+    @Test
+    public void selectAProductFromSearchedList(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.doSearch("T-shirt");
+        searchSteps.selectProductFromList("V-Neck");
+    }
+
+    @Test
+    public void sortSearchedProductWithDescendantPrice(){
+
     }
 
 

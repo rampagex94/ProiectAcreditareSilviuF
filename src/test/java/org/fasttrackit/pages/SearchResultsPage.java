@@ -12,7 +12,7 @@ public class SearchResultsPage extends PageObject {
 
     @FindBy(css = ".content-area")
     private List<WebElementFacade> productList;
-    @FindBy(css = ".woocommerce-info")
+    @FindBy(css = ".content-area p")
     private WebElementFacade noProductsFoundMessage;
 
     public boolean checkListForProduct(String productName) {
@@ -35,13 +35,9 @@ public class SearchResultsPage extends PageObject {
         }
     }
 
-    public boolean noProductsFoundFromSearchResult() {
-        if (noProductsFoundMessage.isDisplayed()) {
-            Assert.assertTrue(true);
-        }
-         return false;
-        }
-
+    public void noProductsFoundFromSearchResult() {
+        noProductsFoundMessage.shouldContainText("No products were found matching your selection.");
+    }
 
 
 

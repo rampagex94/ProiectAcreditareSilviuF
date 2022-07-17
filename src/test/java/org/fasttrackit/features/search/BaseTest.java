@@ -32,7 +32,16 @@ public class BaseTest {
 
     @After
     public void closeDriver(){
+        wait(2000);
         webDriver.close();
+    }
+
+    public static void wait(int ms){
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
