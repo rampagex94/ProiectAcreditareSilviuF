@@ -5,10 +5,10 @@ import org.junit.Test;
 public class SearchTests extends BaseTest{
 
     @Test
-    public void searchValidProductTest() {
+    public void searchValidProduct() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
         searchSteps.doSearch("Beanie");
-        searchSteps.verifyProductSearchResults("Beanie");
+        searchSteps.verifyProductSearchResults("Bfd");
     }
 
     @Test
@@ -32,12 +32,6 @@ public class SearchTests extends BaseTest{
         searchSteps.doSearch("T-shirt");
         searchSteps.selectProductFromList("V-Neck");
     }
-
-    @Test
-    public void sortSearchedProductWithDescendantPrice(){
-
-    }
-
 
 
 

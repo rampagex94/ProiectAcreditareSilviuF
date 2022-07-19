@@ -2,8 +2,7 @@ package org.fasttrackit.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.fasttrackit.pages.HomePage;
-import org.fasttrackit.pages.SearchResultsPage;
+import org.fasttrackit.pages.*;
 import org.junit.Assert;
 
 public class SearchSteps extends ScenarioSteps {
@@ -33,6 +32,7 @@ public class SearchSteps extends ScenarioSteps {
     public void selectProductFromList(String product){
         searchResultsPage.selectProductFromList(product);
     }
+
 
 
 

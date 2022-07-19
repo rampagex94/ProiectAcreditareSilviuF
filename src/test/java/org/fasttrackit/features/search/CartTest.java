@@ -11,9 +11,31 @@ public class CartTest extends BaseTest {
         searchSteps.doSearch("Beanie");
         productSteps.selectProductFromList("Beanie with Logo");
         cartSteps.clickAddToCart();
-        cartSteps.verifySuccessfulAddToCart("\"Beanie with Logo\"");
-
+        cartSteps.verifySuccessfulAddToCartMessage("\"Beanie with Logo\"");
     }
+
+    @Test
+    public void removeProductFromCart(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        cartSteps.clickCartButton();
+        cartSteps.removeFromCartButton();
+        cartSteps.itemRemovedFromCartMessage();
+    }
+
+    @Test
+    public void changeProductQuantityFromCart(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.doSearch("Album");
+        productSteps.selectProductFromList("Album");
+        cartSteps.clickAddToCart();
+        cartSteps.clickCartButton();
+        cartSteps.changeProductQuantity();
+        cartSteps.cartUpdatedMessage();
+    }
+
+
+
+
 }
 
 

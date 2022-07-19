@@ -3,6 +3,7 @@ package org.fasttrackit.features.search;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.steps.serenity.*;
 import org.junit.After;
 import org.junit.runner.RunWith;
@@ -33,7 +34,8 @@ public class BaseTest {
     @After
     public void closeDriver(){
         wait(2000);
-        webDriver.close();
+        webDriver.manage().deleteAllCookies();
+        webDriver.quit();
     }
 
     public static void wait(int ms){
@@ -43,6 +45,7 @@ public class BaseTest {
             e.printStackTrace();
         }
     }
-
-
+    //Thread.sleep makes the currently executing thread to pause its execution for set time.
+    //InterruptedException is thrown when a thread is interrupted while sleeping.
+    //e.printST it's a tool that gives details of the occurred exception.
 }

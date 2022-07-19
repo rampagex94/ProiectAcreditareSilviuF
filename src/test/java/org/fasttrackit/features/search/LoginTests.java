@@ -9,7 +9,7 @@ import static java.lang.System.exit;
 public class LoginTests extends BaseTest {
 
     @Test
-    public void verifyLogInFieldsAreVisible() {
+    public void verifyLogInFormIsVisible() {
         loginSteps.goToMyAccount();
         loginSteps.verifyLoginFormIsVisible();
     }
@@ -17,7 +17,7 @@ public class LoginTests extends BaseTest {
     @Test
     public void verifyLogInRequiredFields() {
         loginSteps.goToMyAccount();
-        loginSteps.verifyLoginRequiredFields();
+        loginSteps.verifyLogInRequiredFields();
     }
 
     @Test

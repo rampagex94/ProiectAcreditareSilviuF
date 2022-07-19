@@ -16,6 +16,12 @@ public class CheckoutTest extends BaseTest {
         checkoutSteps.orderComments("Please deliver in time");
         checkoutSteps.clickPlaceOrderButton();
         checkoutSteps.successfulOrderMsg();
+    }
 
+    @Test
+    public void checkoutWithoutAnyProduct(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        checkoutSteps.clickCheckoutMenuButton();
+        checkoutSteps.emptyCartCantCheckoutMessage();
     }
 }

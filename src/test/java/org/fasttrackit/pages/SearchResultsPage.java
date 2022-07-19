@@ -1,8 +1,10 @@
 package org.fasttrackit.pages;
 
+import io.cucumber.java.mk_latn.No;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
+import org.assertj.core.error.ShouldBeTrue;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -36,8 +38,11 @@ public class SearchResultsPage extends PageObject {
     }
 
     public void noProductsFoundFromSearchResult() {
-        noProductsFoundMessage.shouldContainText("No products were found matching your selection.");
+        String ExpectedMessage = noProductsFoundMessage.getText();
+        String ActualMessage = "No products were found matching your selection.";
+        Assert.assertEquals(ActualMessage, ExpectedMessage);
     }
+
 
 
 

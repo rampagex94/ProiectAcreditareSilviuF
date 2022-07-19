@@ -16,6 +16,12 @@ public class HomePage extends PageObject {
     private WebElementFacade searchField;
     @FindBy(css = "[type=\"submit\"]")
     private WebElementFacade goSearchIcon;
+    @FindBy(css = ".cart-contents")
+    private WebElementFacade goToCartButton;
+    @FindBy(css = "#menu-item-125")
+    private WebElementFacade goToCheckoutButton;
+    @FindBy(css = "#menu-item-123")
+    private WebElementFacade goToShopButton;
 
     public void clickAccountLink() {
         clickOn(myAccountLink);
@@ -26,12 +32,15 @@ public class HomePage extends PageObject {
     public void setSearchField(String keyword) {
         typeInto(searchField, keyword);
     }
-    public void clickSearchIcon(){
+    public void clickSearchIcon() {
         clickOn(goSearchIcon);
     }
-
-
-
+    public void goToCartButton() {
+        clickOn(goToCartButton);
+    }
+    public void goToShopButton(){
+        clickOn(goToShopButton);
+    }
 
 
 

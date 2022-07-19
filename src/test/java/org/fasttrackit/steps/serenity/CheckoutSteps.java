@@ -37,5 +37,11 @@ public class CheckoutSteps {
     public void successfulOrderMsg(){
         checkoutPage.successfulOrderMsg();
     }
+    @Step
+    public void emptyCartCantCheckoutMessage(){
+        checkoutPage.cantCheckoutEmptyCartMessage();
+    }
+
+
 
 }

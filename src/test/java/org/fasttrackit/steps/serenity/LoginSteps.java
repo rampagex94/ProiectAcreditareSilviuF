@@ -5,6 +5,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
 import org.fasttrackit.pages.myAccountPage;
+import org.junit.Assert;
 
 public class LoginSteps extends ScenarioSteps {
 
@@ -14,7 +15,11 @@ public class LoginSteps extends ScenarioSteps {
 
     @Step
     public void verifyLoginFormIsVisible(){
-        loginPage.verifyLoginFormIsVisible();
+        Assert.assertTrue(loginPage.verifyLoginFormIsVisible());
+    }
+    @Step
+    public void verifyLogInRequiredFields(){
+        Assert.assertTrue(loginPage.verifyLoginFormIsVisible());
     }
     @Step
     public void navigateToHomePage() {
@@ -67,10 +72,6 @@ public class LoginSteps extends ScenarioSteps {
     @Step
     public void verifySuccessfulPassResetMsg(String text) {
         myAccountPage.verifySuccessfulPassResetMessage(text);
-    }
-    @Step
-    public void verifyLoginRequiredFields(){
-        loginPage.verifyLoginRequiredFields();
     }
     @Step
     public void clickOnRememberMe(){

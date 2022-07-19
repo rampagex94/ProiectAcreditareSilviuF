@@ -38,60 +38,52 @@ public class CheckoutPage extends PageObject {
     private WebElementFacade orderComments;
     @FindBy(css = "#post-119")
     private WebElementFacade successfulOrder;
-
+    @FindBy(css =".woocommerce-info")
+    private WebElementFacade cantCheckoutEmptyCartMessage;
 
     public void clickCheckoutMenuButton() {
         clickOn(checkoutMenuButton);
     }
-
     public void setBillingFirstNameField(String text) {
         typeInto(firstNameField, text);
     }
-
     public void setBillingLastNameField(String text) {
         typeInto(lastNameField, text);
     }
-
     public void setBillingCompany(String text) {
         typeInto(billingCompanyField, text);
     }
-
     public void setBillingCountry() {
-    }
 
+    }
     public void setBillingAddress(String text) {
         typeInto(billingAddress, text);
     }
-
     public void setBillingCity(String text) {
         typeInto(billingCity, text);
     }
-
     public void setBillingCounty(String text) {
     }
-
     public void setBillingPostcode(String text) {
         typeInto(billingPostcode, text);
     }
-
     public void setBillingPhone(String text) {
         typeInto(billingPhone, text);
     }
-
     public void setBillingEmail(String text) {
         typeInto(billingEmail, text);
     }
-
     public void clickPlaceOrderButton() {
         clickOn(placeOrderButton);
     }
-
     public void setOrderComments(String text) {
         typeInto(orderComments, text);
     }
-
     public void successfulOrderMsg() {
         successfulOrder.shouldBeVisible();
+    }
+    public void cantCheckoutEmptyCartMessage(){
+        cantCheckoutEmptyCartMessage.getText().equals("Checkout is not available whilst your cart is empty.");
     }
 
 }

@@ -46,11 +46,19 @@ public class LoginPage extends PageObject {
     public void emailFieldForPasswordReset(String email) {
         typeInto(recoverEmailField, email);
     }
-    public void verifyLoginFormIsVisible() {
-        loginForm.shouldBeVisible();
+    public boolean verifyLoginFormIsVisible() {
+       if (loginForm.isDisplayed()){
+           return true;
+       } else {
+           return false;
+       }
     }
-    public void verifyLoginRequiredFields() {
-        loginRequiredFields.shouldBeVisible();
+    public boolean verifyLoginRequiredFields() {
+     if (loginRequiredFields.isDisplayed()){
+         return true;
+     } else {
+         return false;
+     }
     }
 
 

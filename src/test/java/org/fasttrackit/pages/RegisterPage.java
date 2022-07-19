@@ -37,7 +37,7 @@ public class RegisterPage extends PageObject {
 
     public void invalidEmailPopup(){
         String popUp = "Please include an '@' in the email address";
-        Assert.assertTrue(popUp, true);
+       Assert.assertTrue(popUp, true);
     }
     public void verifyRegisterFieldsAreVisible(){
         registerForm.shouldBeVisible();

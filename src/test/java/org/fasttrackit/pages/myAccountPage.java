@@ -3,6 +3,7 @@ package org.fasttrackit.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
+import org.junit.Assert;
 
 public class myAccountPage extends PageObject {
 
@@ -27,6 +28,7 @@ public class myAccountPage extends PageObject {
     public void verifySuccessfulLoginMessage(String username) {
         successfulLoginText.shouldContainOnlyText("Hello " + username + " (not " + username + "? Log out)");
     }
+
     public void verifyUnsuccessfulLoginMessage(String text) {
         unsuccessfulLoginText.shouldBeVisible();
     }
