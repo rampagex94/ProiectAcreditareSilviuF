@@ -19,9 +19,9 @@ public class RegisterTest extends BaseTest {
     @Test
     public void registerWithValidCredentials() {
         loginSteps.goToMyAccount();
-        registerSteps.setRegisterCredentials("asdsgf@yahoo.com", "12345qwertASDFG@xx34325");
+        registerSteps.setRegisterCredentials("abcde@yahoo.com", "12345qwertASDFG@xx34325");
         registerSteps.clickRegisterButton();
-        loginSteps.verifySuccessfulLoginMessage("asdsgf");
+        loginSteps.verifySuccessfulLoginMessage("abcde");
     }
 
     @Test
@@ -44,7 +44,7 @@ public class RegisterTest extends BaseTest {
         loginSteps.goToMyAccount();
         registerSteps.setRegisterCredentials("hello", "");
         registerSteps.clickRegisterButton();
-        registerSteps.popUpAlertInvalidRegistrationEmail();
+        registerSteps.verifyPopUpForInvalidEmail();
     }
 
 

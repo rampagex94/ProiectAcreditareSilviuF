@@ -3,9 +3,6 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.fasttrackit.pages.*;
 import org.fasttrackit.pages.HomePage;
-import org.fasttrackit.pages.LoginPage;
-import org.fasttrackit.pages.myAccountPage;
-import org.fasttrackit.utils.Constants;
 
 public class CartSteps extends ScenarioSteps {
 

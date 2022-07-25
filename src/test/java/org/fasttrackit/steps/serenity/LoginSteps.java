@@ -3,23 +3,21 @@ package org.fasttrackit.steps.serenity;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.fasttrackit.pages.HomePage;
-import org.fasttrackit.pages.LoginPage;
 import org.fasttrackit.pages.myAccountPage;
 import org.junit.Assert;
 
 public class LoginSteps extends ScenarioSteps {
 
     private HomePage homePage;
-    private LoginPage loginPage;
     private myAccountPage myAccountPage;
 
     @Step
     public void verifyLoginFormIsVisible(){
-        Assert.assertTrue(loginPage.verifyLoginFormIsVisible());
+        Assert.assertTrue(myAccountPage.verifyLoginFormIsVisible());
     }
     @Step
     public void verifyLogInRequiredFields(){
-        Assert.assertTrue(loginPage.verifyLoginFormIsVisible());
+        Assert.assertTrue(myAccountPage.verifyLogInRequiredFieldsAreVisible());
     }
     @Step
     public void navigateToHomePage() {
@@ -31,12 +29,12 @@ public class LoginSteps extends ScenarioSteps {
     }
     @Step
     public void setCredentials(String email, String pass) {
-        loginPage.setEmailField(email);
-        loginPage.setPasswordField(pass);
+        myAccountPage.setEmailField(email);
+        myAccountPage.setLoginPasswordField(pass);
     }
     @Step
     public void clickLoginButton() {
-        loginPage.clickLoginButton();
+        myAccountPage.clickLoginButton();
     }
     @Step
     public void verifySuccessfulLoginMessage(String username) {
@@ -59,15 +57,15 @@ public class LoginSteps extends ScenarioSteps {
     }
     @Step
     public void clickForgotPassword() {
-        loginPage.clickForgotPassword();
+        myAccountPage.clickForgotPassword();
     }
     @Step
     public void inputEmailForAccountPasswordReset(String email) {
-        loginPage.emailFieldForPasswordReset(email);
+        myAccountPage.emailFieldForPasswordReset(email);
     }
     @Step
     public void clickRecoverPasswordButton() {
-        loginPage.clickResetPasswordForAccountButton();
+        myAccountPage.clickResetPasswordForAccountButton();
     }
     @Step
     public void verifySuccessfulPassResetMsg(String text) {
@@ -75,7 +73,7 @@ public class LoginSteps extends ScenarioSteps {
     }
     @Step
     public void clickOnRememberMe(){
-        loginPage.clickOnRememberMe();
+        myAccountPage.clickOnRememberMe();
     }
     @Step
     public void goToMyAccount(){

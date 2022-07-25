@@ -16,6 +16,8 @@ public class SearchResultsPage extends PageObject {
     private List<WebElementFacade> productList;
     @FindBy(css = ".content-area p")
     private WebElementFacade noProductsFoundMessage;
+    @FindBy(css = ".wp-post-image")
+    private WebElementFacade productImage;
 
     public boolean checkListForProduct(String productName) {
         for (WebElementFacade element : productList) {
@@ -27,11 +29,10 @@ public class SearchResultsPage extends PageObject {
         return false;
     }
 
-    public void selectProductFromList(String product){
+    public void selectProductFromList(String product) {
         for (WebElementFacade element : productList) {
-            String name = element.findElement(By.cssSelector(".content-area h2")).getText();
-            if (name.contains(product)) {
-                element.findElement(By.cssSelector(".wp-post-image")).click();
+            if (element.findElement(By.cssSelector(".content-area h2")).getText().equalsIgnoreCase(product)) {
+               element.findElement(By.cssSelector(".content-area h2")).click();
                 break;
             }
         }

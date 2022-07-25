@@ -2,7 +2,6 @@ package org.fasttrackit.features.search;
 
 import org.fasttrackit.utils.Constants;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import static java.lang.System.exit;
 
@@ -15,7 +14,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    public void verifyLogInRequiredFields() {
+    public void verifyLogInRequiredFieldsAreVisible() {
         loginSteps.goToMyAccount();
         loginSteps.verifyLogInRequiredFields();
     }
@@ -29,7 +28,7 @@ public class LoginTests extends BaseTest {
     @Test
     public void logInWithInvalidCredentials() {
         loginSteps.goToMyAccount();
-        loginSteps.setCredentials("12345@yahoo.com", "lalala123");
+        loginSteps.setCredentials("12345@yahoo.com", "kangaroo123");
         loginSteps.clickLoginButton();
         loginSteps.verifyUnsuccessfulLoginMessage("ERROR");
     }
@@ -56,7 +55,6 @@ public class LoginTests extends BaseTest {
         loginSteps.setCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
         loginSteps.clickOnRememberMe();
         loginSteps.clickLoginButton();
-        webDriver.close();
 
     }
 }

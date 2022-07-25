@@ -19,18 +19,17 @@ public class SearchTests extends BaseTest{
     }
 
     @Test
-    public void checkSearchedItemIsRelevantToProductsList(){
+    public void checkIfProductListIsRelevantToSearch(){
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
         searchSteps.doSearch("T-shirt");
         searchSteps.checkListForProduct("T-shirt");
-
     }
 
     @Test
     public void selectAProductFromSearchedList(){
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
         searchSteps.doSearch("T-shirt");
-        searchSteps.selectProductFromList("V-Neck");
+        searchSteps.selectProductFromList("New T-shirt");
     }
 
 
